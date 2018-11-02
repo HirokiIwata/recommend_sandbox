@@ -126,16 +126,42 @@
       <v-btn v-if="q_num==0" round color="primary" large v-on:click="web_reccomend">スタート</v-btn>
     </div>
 
-    <div>
-      <v-btn v-if="q_num!=0&&0<=q_num&&q_num<=data_query.length" round color="primary" large v-on:click="get_checkbox">次へ</v-btn>
+    <div class="loading">
+      <v-progress-circular
+      v-if="q_num==-5000"
+      :size="50"
+      color="primary"
+      indeterminate
+    ></v-progress-circular>
+      <!-- <v-btn v-if="q_num==-5000" round color="primary" loading large ></v-btn> -->
     </div>
 
-    <div v-if="q_num!=0&&q_num>data_query.length">
+    <div>
+      <v-btn v-if="q_num!=0&&data_query&&0<=q_num&&q_num<=data_query.length" round color="primary" large v-on:click="get_checkbox">次へ</v-btn>
+    </div>
+
+    <div v-if="q_num!=0&&data_query&&q_num>data_query.length">
       <p>お疲れ様でした！</p>
       <v-btn round color="primary" large v-on:click="show_result">結果を表示する</v-btn>
     </div>
+
+    <div v-if="q_num==-9000">
+      <v-progress-circular
+      :buffer-value="10"
+      :rotate="-90"
+      :size="200"
+      :width="15"
+      :value="value"
+      color="primary"
+    >
+        分析中...
+      </v-progress-circular>
+    </div>
+
   </section>
 </template>
+
+
 
 
 <script>
@@ -148,10 +174,12 @@ export default {
   },
   data(){
     return{
+      interval: {}, //progress
+      value: 0, //progress
       show: {0: false, 1: false, 2: false},
       json: null,
       result: null,
-      q_num: 0,
+      q_num: -5000,
       tags: [
         {tag:'宇宙像',tag_id:1},
         {tag:'素粒子',tag_id: 2},
@@ -189,7 +217,7 @@ export default {
   methods: {
     show_result: function(event){
 
-      this.q_num = -10000 //値は適当です
+      this.q_num = -9000 //値は適当です
       const recommend_num = 3; //オススメする展示物の数
       const adopted_num = 2; //pmi上位採用数
       let a516 = {id: 516,exhibit: "パワーズオブテン",point: 0, pmi: 0,basis: [],src: require("../static/A516-photo.jpg"),overview: "この展示室の外周は北側入口から右回りに、地球から宇宙の果てまでの天体や事象を並べています。そのスケールは、長さを10倍ずつ大きくしていくパワーズオブテン（10のべき乗）の考え方に沿っています。 北側展示室入り口から時計回りに外周を回って、宇宙のスケールの旅にご出発ください。"}
@@ -208,6 +236,19 @@ export default {
       let exhibits_list = [a516,a517,a518,a519,a520,a521,a522,a523,a524,a525,a526,a527,a528]
       let visitor_tags = this.visitor_tags
       let db = [];
+
+
+      this.interval = setInterval(() => {
+        if (this.value === 110) {
+          // return (this.value = 0)
+          this.q_num = -10000
+        }
+        this.value += 5
+      }, 200)
+
+
+
+
       for(let v of visitor_tags){
         let tmp_json = [];
         let tmp = this.json.filter(function(element){
@@ -418,11 +459,20 @@ export default {
 
     }
   },
+
+
+
   created() {
     //do something after creating vue instance
     // console.log('こんいgんkg')
     this.json = require('../static/mysql.json')
+    // this.q_num = 0;
   },
+
+  mounted() {
+    //do something before mounting vue instance
+    this.q_num = 0;
+  }
   // asyncData(){
   //   // console.log('testss')
   //   return{

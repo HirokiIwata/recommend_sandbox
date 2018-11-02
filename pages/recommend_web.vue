@@ -278,7 +278,7 @@ export default {
                 w.point++;
                 w.pmi=w.pmi+(Math.round(v[i].pmi*100))/100;
                 w.basis.push(v[i].visitor_tag)
-                console.log(exhibits_list)
+                // console.log(exhibits_list)
               }
             }
           }
@@ -310,7 +310,7 @@ export default {
       //   var overlap = exhibits_list[i].basis.filter(function (x, i, self) {
       //       return self.indexOf(x) !== self.lastIndexOf(x);
       //   });
-        console.log(exhibits_list[i].basis)
+        // console.log(exhibits_list[i].basis)
         var unique = exhibits_list[i].basis.filter(function (x, i, self) {
             return self.indexOf(x) === i;
         });
@@ -340,7 +340,7 @@ export default {
         // console.log(exhibits_list)
         this.recommend_exhibits.push(exhibits_list[i])
       }
-      console.log(this.recommend_exhibits)
+      // console.log(this.recommend_exhibits)
 
     },
 
@@ -413,7 +413,7 @@ export default {
 
       this.q_num++;
 
-      console.log(this.q_num)
+      // console.log(this.q_num)
 
     }
   },

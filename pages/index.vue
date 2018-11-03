@@ -5,7 +5,7 @@
         <v-flex>
           <h4 class="display-3">Welcome to <br>the site</h4>
 
-          <span class="subheading">名古屋市科学館<br>天文展示室の展示物をオススメします！</span>
+          <span class="subheading">天文展示室の展示物をオススメします！</span>
 
           <v-divider class="my-3"></v-divider>
 

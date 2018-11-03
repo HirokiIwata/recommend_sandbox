@@ -15,6 +15,7 @@
             class="mx-0"
             color="primary"
             large
+            v-on:click="junbichu"
           >
             See more
           </v-btn>
@@ -31,6 +32,12 @@ export default {
   layout: 'nested',
   components: {
     AppLogo
+  },
+  methods: {
+    junbichu: function (event) {
+      // ここにオススメプログラムをつらつらと書いていく
+      alert('準備中です！')
+    }
   }
 }
 </script>

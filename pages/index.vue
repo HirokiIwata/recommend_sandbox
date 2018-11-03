@@ -3,7 +3,7 @@
     <v-container fill-height>
       <v-layout align-center>
         <v-flex>
-          <h3 class="display-3">Welcome to the site</h3>
+          <h4 class="display-3">Welcome to <br>the site</h4>
 
           <span class="subheading">名古屋市科学館<br>天文展示室の展示物をオススメします！</span>
 

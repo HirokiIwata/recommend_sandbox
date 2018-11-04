@@ -238,6 +238,7 @@ export default {
       let db = [];
 
 
+      //分析中...表示用
       this.interval = setInterval(() => {
         if (this.value === 110) {
           // return (this.value = 0)

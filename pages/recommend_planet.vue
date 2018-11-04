@@ -4,8 +4,20 @@
     <div v-if="q_num==0">
       <p>プラネ推薦のページです</p>
     </div>
+
+    <!-- スタートボタン -->
     <div>
       <v-btn v-if="q_num==0" round color="primary" large v-on:click="curator_reccomend">スタート</v-btn>
+    </div>
+
+    <!-- 初期ロード表示 -->
+    <div class="loading">
+      <v-progress-circular
+      v-if="q_num==-5000"
+      :size="50"
+      color="primary"
+      indeterminate
+    ></v-progress-circular>
     </div>
 
     <div v-if="q_num==-9000">

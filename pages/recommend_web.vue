@@ -35,23 +35,6 @@
       </div>
     </div>
 
-    <!-- 来館者タグ表示 -->
-    <!-- <div
-    class = "visitor_tags"
-    v-if="q_num==-10000">
-      <span
-      class="text-xs-center"
-      v-for="item in visitor_tags_test"
-      :key="item[0]">
-        <v-chip
-        color="secondary"
-        text-color="white"
-        disable
-        small>
-          <v-icon left>label</v-icon>{{ item[0] }}
-        </v-chip>
-      </span>
-    </div> -->
 
     <!-- 推薦展示物表示 -->
     <div
@@ -126,6 +109,7 @@
       <v-btn v-if="q_num==0" round color="primary" large v-on:click="web_reccomend">スタート</v-btn>
     </div>
 
+    <!-- 初期ロード表示 -->
     <div class="loading">
       <v-progress-circular
       v-if="q_num==-5000"
@@ -133,7 +117,6 @@
       color="primary"
       indeterminate
     ></v-progress-circular>
-      <!-- <v-btn v-if="q_num==-5000" round color="primary" loading large ></v-btn> -->
     </div>
 
     <div>
@@ -145,6 +128,7 @@
       <v-btn round color="primary" large v-on:click="show_result">結果を表示する</v-btn>
     </div>
 
+    <!-- ロード中 -->
     <div v-if="q_num==-9000">
       <v-progress-circular
       :buffer-value="10"

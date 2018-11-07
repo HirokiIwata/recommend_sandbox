@@ -11,14 +11,14 @@
 
           <div class="title mb-3">Check out our newest features!</div>
 
-          <v-btn
+          <!-- <v-btn
             class="mx-0"
             color="primary"
             large
             v-on:click="junbichu"
           >
             See more
-          </v-btn>
+          </v-btn> -->
         </v-flex>
       </v-layout>
     </v-container>

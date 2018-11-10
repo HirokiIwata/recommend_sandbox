@@ -10,7 +10,7 @@
     <div v-if="q_num==0" class="title">
       <h3><p>web推薦のページです<br><br>
       表示される語句の中から<br>気になるものを<br>
-      選んでください</p></h3>
+      選んでください<br>(複数回答可)</p></h3>
       <v-spacer><br></v-spacer>
     </div>
 

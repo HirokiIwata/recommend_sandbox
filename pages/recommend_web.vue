@@ -486,6 +486,7 @@ export default {
 }
 .card_img{
   justify-content: center;
+  align-items: center;
 }
 .actions{
   justify-content: center;

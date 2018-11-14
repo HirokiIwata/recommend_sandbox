@@ -1,7 +1,7 @@
 <template>
   <v-responsive>
     <v-container fill-height>
-      <v-layout align-center>
+      <v-layout class="main">
         <v-flex>
           <h4 class="display-3">Welcome to <br>the site</h4>
 
@@ -9,16 +9,17 @@
 
           <v-divider class="my-3"></v-divider>
 
-          <div class="title mb-3">Check out our newest features!</div>
+          <div class="title mb-3">↓↓まずはここをチェック！↓↓</div>
 
-          <!-- <v-btn
-            class="mx-0"
-            color="primary"
-            large
-            v-on:click="junbichu"
-          >
-            See more
-          </v-btn> -->
+          <router-link to="/recommend_web">
+            <v-btn
+              class="mx-0"
+              color="primary"
+              large
+            >
+              展示物のオススメへ行く
+            </v-btn>
+          </router-link>
         </v-flex>
       </v-layout>
     </v-container>
@@ -43,5 +44,8 @@ export default {
 </script>
 
 <style>
-
+.main{
+  align-items: center;
+  justify-content: center;
+}
 </style>

@@ -48,4 +48,38 @@ export default {
   align-items: center;
   justify-content: center;
 }
+.query{
+  font-weight: bold;
+  font-size: 2em;
+}
+.title{
+  font-size: 14px;
+  font-weight: bold;
+}
+.card_img{
+  justify-content: center;
+  align-items: center;
+}
+.actions{
+  justify-content: center;
+}
+.primary-title{
+  align-items: center;
+  justify-content: center;
+}
+.more {
+  max-width: 350px;
+}
+
+.rank {
+  font-size: 16px;
+  font-weight: bold;
+}
+.container {
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 </style>

@@ -84,7 +84,7 @@
             <v-card-actions class="actions">
               <v-btn flat outline color="accent" @click="show[index] = !show[index]">
                 概要
-                <v-icon>{{ show[index] ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
+                <v-icon>{{ show[index] ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}</v-icon>
               </v-btn>
               <v-btn
               flat

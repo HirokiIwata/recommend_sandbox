@@ -70,7 +70,7 @@
             </v-list-tile>
             <!-- </router-link> -->
               <v-list-group
-                prepend-icon="expand_less"
+                prepend-icon="expand_more"
                 sub-group
                 >
                 <v-list-tile slot="activator">
@@ -226,7 +226,7 @@
                 </v-list-group>
 
                 <v-list-group
-                  prepend-icon="expand_less"
+                  prepend-icon="expand_more"
                   sub-group
                   >
                   <v-list-tile slot="activator">
@@ -252,7 +252,7 @@
                   </v-list-group>
 
                   <v-list-group
-                    prepend-icon="expand_less"
+                    prepend-icon="expand_more"
                     sub-group
                     >
                     <v-list-tile slot="activator">

@@ -64,7 +64,7 @@
               <div class="headline">{{item.exhibit}}</div>
               <v-spacer><br></v-spacer>
 
-              <div>
+              <div class="basis">
                 <span
                 v-for="tag in item.basis"
                 :key="tag">
@@ -198,7 +198,44 @@ export default {
         {tag:'隕石',tag_id: 23},
         {tag:'オーロラ',tag_id: 24},
         {tag:'彗星',tag_id: 25},
-        {tag:'万有引力',tag_id: 26}, {tag:'ニュートン',tag_id: 27}, {tag:'ケプラー',tag_id: 28}, {tag:'ブラックホール',tag_id: 29}, {tag:'物理法則',tag_id: 30}, {tag:'惑星探査',tag_id: 31}, {tag:'ミッション',tag_id: 32}, {tag:'人工衛星',tag_id: 33}, {tag:'実体験展示',tag_id: 34}, {tag:'プロジェクト',tag_id: 35}, {tag:'地球外生命体',tag_id: 36}, {tag:'系外惑星',tag_id: 37}, {tag:'星の明るさ',tag_id: 38}, {tag:'星までの距離',tag_id: 39}, {tag:'星の大きさ',tag_id: 40}, {tag:'星の位置関係',tag_id: 41}, {tag:'北斗七星',tag_id: 42}, {tag:'カシオペア座',tag_id: 43}, {tag:'オリオン座',tag_id: 44}, {tag:'夏の大三角',tag_id: 45}, {tag:'核融合',tag_id: 46}, {tag:'星雲',tag_id: 47}, {tag:'スペクトル',tag_id: 49}, {tag:'超新星',tag_id: 50}, {tag:'銀河群',tag_id: 51}, {tag:'アンドロメダ',tag_id: 52}, {tag:'銀河',tag_id: 53}, {tag:'銀河団',tag_id: 54}, {tag:'銀河系',tag_id: 56}, {tag:'天の川',tag_id: 57}, {tag:'円盤',tag_id: 58}, {tag:'アクリル模型',tag_id: 59}, {tag:'銀河の種類',tag_id: 60}, {tag:'宇宙の果て',tag_id: 61}, {tag:'ビッグバン',tag_id: 62}, {tag:'宇宙の地図',tag_id: 63}, {tag:'インフレーション',tag_id: 64}, {tag:'宇宙の大きさ',tag_id: 65}],
+        {tag:'万有引力',tag_id: 26},
+        {tag:'ニュートン',tag_id: 27},
+        {tag:'ケプラー',tag_id: 28},
+        {tag:'ブラックホール',tag_id: 29},
+        {tag:'物理法則',tag_id: 30},
+        {tag:'惑星探査',tag_id: 31},
+        {tag:'ミッション',tag_id: 32},
+        {tag:'人工衛星',tag_id: 33},
+        {tag:'実体験展示',tag_id: 34},
+        {tag:'プロジェクト',tag_id: 35},
+        {tag:'地球外生命体',tag_id: 36},
+        {tag:'系外惑星',tag_id: 37},
+        {tag:'星の明るさ',tag_id: 38},
+        {tag:'星までの距離',tag_id: 39},
+        {tag:'星の大きさ',tag_id: 40},
+        {tag:'星の位置関係',tag_id: 41},
+        {tag:'北斗七星',tag_id: 42},
+        {tag:'カシオペア座',tag_id: 43},
+        {tag:'オリオン座',tag_id: 44},
+        {tag:'夏の大三角',tag_id: 45},
+        {tag:'核融合',tag_id: 46},
+        {tag:'星雲',tag_id: 47},
+        {tag:'スペクトル',tag_id: 49},
+        {tag:'超新星',tag_id: 50},
+        {tag:'銀河群',tag_id: 51},
+        {tag:'アンドロメダ',tag_id: 52},
+        {tag:'銀河',tag_id: 53},
+        {tag:'銀河団',tag_id: 54},
+        {tag:'銀河系',tag_id: 56},
+        {tag:'天の川',tag_id: 57},
+        {tag:'円盤',tag_id: 58},
+        {tag:'アクリル模型',tag_id: 59},
+        {tag:'銀河の種類',tag_id: 60},
+        {tag:'宇宙の果て',tag_id: 61},
+        {tag:'ビッグバン',tag_id: 62},
+        {tag:'宇宙の地図',tag_id: 63},
+        {tag:'インフレーション',tag_id: 64},
+        {tag:'宇宙の大きさ',tag_id: 65}],
       data_query: null, // , {tag:'ブラックホール',tag_id: 48}, {tag:'ブラックホール',tag_id: 55}
       visitor_tags: [],
       // visitor_tags_test: [['万有引力',26],['ケプラー',28] , ['ブラックホール', 29], ['ニュートン', 27], ['物理法則',30]],
@@ -476,6 +513,9 @@ export default {
 </script>
 
 <style>
+/* .basis{
+  width: 350px;
+} */
 .query{
   font-weight: bold;
   font-size: 2em;
@@ -494,6 +534,7 @@ export default {
 .primary-title{
   align-items: center;
   justify-content: center;
+  width: 350px;
 }
 .more {
   max-width: 350px;

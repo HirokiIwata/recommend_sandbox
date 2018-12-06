@@ -1,7 +1,7 @@
 <template>
   <v-responsive>
     <section>
-      <v-parallax src="plane.jpg" height="450">
+      <v-parallax src="../static/plane.jpg" height="450">
         <v-layout
           column
           align-center
@@ -110,7 +110,7 @@
     </section>
 
     <section>
-      <v-parallax src="plane.jpg" height="380">
+      <v-parallax src="../static/plane.jpg" height="380">
         <v-layout column align-center justify-center>
           <div class="headline white--text mb-3 text-xs-center"><b>Exhibit Recommendation System</b></div>
           <em><b>Let's see the exhibition<br>according to your interests!<br>※English ver. comming soon...</b></em>

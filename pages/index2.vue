@@ -63,14 +63,14 @@
                 <v-card flat class="transparent">
                   <v-card-text class="text-xs-center">
                     <a
-                    href="http://www.ncsm.city.nagoya.jp/exhibit_files/pdf/A516.pdf"
+                    href="https://heroku-app-mobileguide.herokuapp.com/exhibits/index"
                     target="_blank">
                     <v-icon x-large class="blue--text text--lighten-2">color_lens</v-icon>
                     </a>
                   </v-card-text>
                   <v-card-title primary-title class="layout justify-center">
                     <div class="headline text-xs-center"><a
-                    href="http://www.ncsm.city.nagoya.jp/exhibit_files/pdf/A516.pdf"
+                    href="https://heroku-app-mobileguide.herokuapp.com/exhibits/index"
                     target="_blank">展示物一覧</a></div>
                   </v-card-title>
                   <v-card-text>
@@ -134,14 +134,14 @@
             <v-card flat class="transparent">
               <v-card-text class="text-xs-center">
                 <a
-                href="http://www.ncsm.city.nagoya.jp/study/astro/index.html"
+                href="http://www.mdg.ss.is.nagoya-u.ac.jp/"
                 target="_blank">
                   <v-icon x-large class="blue--text text--lighten-2">category</v-icon>
                 </a>
               </v-card-text>
               <v-card-title primary-title class="layout justify-center">
                 <div class="headline"><a
-                href="http://www.ncsm.city.nagoya.jp/study/astro/index.html"
+                href="http://www.mdg.ss.is.nagoya-u.ac.jp/"
                 target="_blank">当研究室について</a></div>
               </v-card-title>
               <v-card-text>

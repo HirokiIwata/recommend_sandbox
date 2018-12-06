@@ -41,8 +41,7 @@
         </v-flex>
         <v-flex xs12>
           <v-container grid-list-xl>
-            <v-layout row wrap align-center>
-
+            <v-layout row wrap align-center justify-center justify-content >
               <v-card flat class="transparent">
                 <router-link to="/recommend_web">
                   <v-card-text class="text-xs-center">
@@ -55,8 +54,7 @@
                   </v-card-title>
                 </router-link>
                 <v-card-text>
-                  提示される言葉の中から気になるものを選ぶことで<br>
-                  あなたの興味に合わせた展示物をオススメします！
+                  提示される言葉の中から<br>気になるものを選ぶことで<br>あなたの興味に合わせた<br>展示物をオススメします！
                 </v-card-text>
               </v-card>
               <v-flex xs12 md4>
@@ -74,7 +72,7 @@
                     target="_blank">展示物一覧</a></div>
                   </v-card-title>
                   <v-card-text>
-                    天文に関する展示物の解説をデジタル形式で閲覧することができます．
+                    天文に関する展示物の解説を<br>デジタル形式で閲覧できます．<br>
                     展示室には書かれていないここだけの情報も・・・！
                   </v-card-text>
                 </v-card>
@@ -96,8 +94,8 @@
                     </a>
                   </v-card-title>
                   <v-card-text>
-                    名古屋市科学館が公開している天文情報にアクセスできます．
-                    スーパーカミオカンデの内部映像など貴重な映像が盛りだくさん！
+                    名古屋市科学館が公開している<br>天文情報にアクセスできます．<br>
+                    スーパーカミオカンデの内部映像など<br>貴重な映像が盛りだくさん！
                   </v-card-text>
                 </v-card>
               </v-flex>

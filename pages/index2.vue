@@ -73,7 +73,7 @@
                   </v-card-title>
                   <v-card-text>
                     天文に関する展示物の解説を<br>デジタル形式で閲覧できます．<br>
-                    展示室には書かれていないここだけの情報も・・・！
+                    展示室には書かれていない<br>ここだけの情報も・・・！
                   </v-card-text>
                 </v-card>
               </v-flex>
@@ -173,7 +173,7 @@
 export default {
   data(){
     return{
-      background: require("../static/plane.jpg")
+      background: require("../static/plane_l.jpg")
     }
   }
 }

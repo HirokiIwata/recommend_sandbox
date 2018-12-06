@@ -39,7 +39,7 @@
               </v-list-tile>
             </router-link>
 
-            <router-link to="/recommend_curator">
+            <!-- <router-link to="/recommend_curator">
               <v-list-tile>
                 <v-list-tile-action>
                   <v-icon>timeline</v-icon>
@@ -55,7 +55,7 @@
                 </v-list-tile-action>
                 <v-list-tile-title>プラネ推薦</v-list-tile-title>
               </v-list-tile>
-            </router-link>
+            </router-link> -->
           </v-list-group>
 
           <v-list-group dense class='pt-0'>

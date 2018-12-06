@@ -82,6 +82,10 @@
             </v-card-title>
 
             <v-card-actions class="actions">
+              <v-btn flat outline color="accent" @click="show[index] = !show[index]">
+                概要
+                <v-icon>{{ show[index] ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}</v-icon>
+              </v-btn>
               <v-btn
               flat
               outline
@@ -89,17 +93,13 @@
               :href="item.url"
               target="_blank"
               >解説を見る</v-btn>
-              <v-btn flat outline color="accent" @click="show[index] = !show[index]">
-                アクセス
-                <v-icon>{{ show[index] ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}</v-icon>
-              </v-btn>
+              <v-btn flat outline color="primary">アクセス</v-btn>
             </v-card-actions>
 
             <v-slide-y-transition>
-              <v-img class="more" v-show="show[index]"
-                :src="item.map"
-                width="350px">
-              </v-img>
+              <v-card-text class="more" v-show="show[index]">
+                {{item.overview}}
+              </v-card-text>
             </v-slide-y-transition>
           </v-card>
           <v-spacer><br></v-spacer>
@@ -157,13 +157,9 @@
 
 
 <script>
-import AppLogo from '~/components/AppLogo.vue'
 
 export default {
   layout: 'nested',
-  components: {
-    AppLogo
-  },
   data(){
     return{
       interval: {}, //progress
@@ -173,69 +169,74 @@ export default {
       result: null,
       q_num: -5000,
       tags: [
-        {tag:'宇宙像',tag_id:1},
-        {tag:'素粒子',tag_id: 2},
-        {tag:'スケール',tag_id: 3},
-        {tag:'大きな数',tag_id: 4},
-        {tag:'地球からの距離',tag_id: 5},
-        {tag:'地球',tag_id: 6},
-        {tag:'惑星',tag_id: 7},
-        {tag:'大陸移動',tag_id: 8},
-        {tag:'プレート',tag_id: 9},
-        {tag:'自転',tag_id: 10},
-        {tag:'月食',tag_id: 11},
-        {tag:'月の満ち欠け',tag_id: 12},
-        {tag:'衛星',tag_id: 13},
-        {tag:'月齢',tag_id: 14},
-        {tag:'かぐや',tag_id: 15},
-        {tag:'宇宙開発競争',tag_id: 16},
-        {tag:'月面探査',tag_id: 17},
-        {tag:'有人飛行',tag_id: 18},
-        {tag:'ロケット',tag_id: 19},
-        {tag:'巨大模型',tag_id: 20},
-        {tag:'ボイジャー1号',tag_id: 21},
-        {tag:'流星群',tag_id: 22},
-        {tag:'隕石',tag_id: 23},
-        {tag:'オーロラ',tag_id: 24},
-        {tag:'彗星',tag_id: 25},
-        {tag:'万有引力',tag_id: 26},
-        {tag:'ニュートン',tag_id: 27},
-        {tag:'ケプラー',tag_id: 28},
-        {tag:'ブラックホール',tag_id: 29},
-        {tag:'物理法則',tag_id: 30},
-        {tag:'惑星探査',tag_id: 31},
-        {tag:'ミッション',tag_id: 32},
-        {tag:'人工衛星',tag_id: 33},
-        {tag:'実体験展示',tag_id: 34},
-        {tag:'プロジェクト',tag_id: 35},
-        {tag:'地球外生命体',tag_id: 36},
-        {tag:'系外惑星',tag_id: 37},
-        {tag:'星の明るさ',tag_id: 38},
-        {tag:'星までの距離',tag_id: 39},
-        {tag:'星の大きさ',tag_id: 40},
-        {tag:'星の位置関係',tag_id: 41},
-        {tag:'北斗七星',tag_id: 42},
-        {tag:'カシオペア座',tag_id: 43},
-        {tag:'オリオン座',tag_id: 44},
-        {tag:'夏の大三角',tag_id: 45},
-        {tag:'核融合',tag_id: 46},
-        {tag:'星雲',tag_id: 47},
+        {tag:'月食',tag_id:1},
+        {tag:'満ち欠け',tag_id: 2},
+        {tag:'かぐや',tag_id: 3},
+        {tag:'衛星',tag_id: 4},
+        {tag:'ケプラー',tag_id: 5},
+        {tag:'万有引力',tag_id: 6},
+        {tag:'ニュートン',tag_id: 7},
+        {tag:'ブラックホール',tag_id: 8},
+        {tag:'探査機',tag_id: 9},
+        {tag:'ミッション',tag_id: 10},
+        {tag:'惑星',tag_id: 11},
+        {tag:'タイムラグ',tag_id: 12},
+        {tag:'銀河系',tag_id: 13},
+        {tag:'天の川',tag_id: 14},
+        {tag:'円盤',tag_id: 15},
+        {tag:'断面図',tag_id: 16},
+        {tag:'プラネタリウム',tag_id: 17},
+        {tag:'歴史',tag_id: 18},
+        {tag:'オルゴール',tag_id: 19},
+        {tag:'カールツァイス',tag_id: 20},
+        {tag:'旧名古屋市科学館',tag_id: 21},
+        {tag:'歴史',tag_id: 22},
+        {tag:'思い出',tag_id: 23},
+        {tag:'タイムカプセル',tag_id: 24},
+        {tag:'天動説',tag_id: 25},
+        {tag:'地動説',tag_id: 26},
+        {tag:'ガリレオ',tag_id: 27},
+        {tag:'コペルニクス',tag_id: 28},
+        {tag:'宇宙観',tag_id: 29},
+        {tag:'神話',tag_id: 30},
+        {tag:'占星術',tag_id: 31},
+        {tag:'遺跡',tag_id: 32},
+        {tag:'江戸',tag_id: 33},
+        {tag:'歴史',tag_id: 34},
+        {tag:'地動説',tag_id: 35},
+        {tag:'和製',tag_id: 36},
+        {tag:'レンズ',tag_id: 37},
+        {tag:'屈折',tag_id: 38},
+        {tag:'反射',tag_id: 39},
+        {tag:'望遠鏡',tag_id: 40},
+        {tag:'倍率',tag_id: 41},
+        {tag:'視野',tag_id: 42},
+        {tag:'望遠鏡',tag_id: 43},
+        {tag:'口径',tag_id: 44},
+        {tag:'X線',tag_id: 45},
+        {tag:'紫外線',tag_id: 46},
+        {tag:'赤外線',tag_id: 47},
+        {tag:'電波',tag_id: 48},
         {tag:'スペクトル',tag_id: 49},
-        {tag:'超新星',tag_id: 50},
-        {tag:'銀河群',tag_id: 51},
-        {tag:'アンドロメダ',tag_id: 52},
-        {tag:'銀河',tag_id: 53},
-        {tag:'銀河団',tag_id: 54},
-        {tag:'銀河系',tag_id: 56},
-        {tag:'天の川',tag_id: 57},
-        {tag:'円盤',tag_id: 58},
-        {tag:'アクリル模型',tag_id: 59},
-        {tag:'銀河の種類',tag_id: 60},
-        {tag:'宇宙の果て',tag_id: 61},
-        {tag:'ビッグバン',tag_id: 62},
-        {tag:'宇宙の地図',tag_id: 63},
-        {tag:'インフレーション',tag_id: 64},
-        {tag:'宇宙の大きさ',tag_id: 65}],
+        {tag:'プリズム',tag_id: 50},
+        {tag:'波長',tag_id: 51},
+        {tag:'回折格子',tag_id: 52},
+        {tag:'電波',tag_id: 53},
+        {tag:'パラボラアンテナ',tag_id: 54},
+        {tag:'宇宙背景放射',tag_id: 55},
+        {tag:'無線',tag_id: 56},
+        {tag:'X線',tag_id: 57},
+        {tag:'超高温',tag_id: 58},
+        {tag:'高エネルギー',tag_id: 59},
+        {tag:'レントゲン',tag_id: 60},
+        {tag:'光害',tag_id: 61},
+        {tag:'夜景',tag_id: 62},
+        {tag:'環境',tag_id: 63},
+        {tag:'都会',tag_id: 64},
+        {tag:'宇宙線',tag_id: 65},
+        {tag:'霧箱',tag_id: 66},
+        {tag:'放射線',tag_id: 67},
+        {tag:'イオン',tag_id: 68}],
       data_query: null, // , {tag:'ブラックホール',tag_id: 48}, {tag:'ブラックホール',tag_id: 55}
       visitor_tags: [],
       // visitor_tags_test: [['万有引力',26],['ケプラー',28] , ['ブラックホール', 29], ['ニュートン', 27], ['物理法則',30]],
@@ -249,20 +250,25 @@ export default {
       this.q_num = -9000 //値は適当です
       const recommend_num = 3; //オススメする展示物の数
       const adopted_num = 2; //pmi上位採用数
-      let a516 = {id: 516,exhibit: "パワーズオブテン",url: "https://heroku-app-mobileguide.herokuapp.com/exhibits/42",point: 0, pmi: 0,basis: [],src: require("../static/A516-photo.jpg"),map: require("../static/background.png")}
-      let a517 = {id: 517,exhibit: "地球",url: "https://heroku-app-mobileguide.herokuapp.com/exhibits/43",point: 0,pmi: 0,basis: [],src: require("../static/A517-photo.jpg"),map: require("../static/background.png")}
-      let a518 = {id: 518,exhibit: "月の満ち欠け",url: "https://heroku-app-mobileguide.herokuapp.com/exhibits/44",point: 0,pmi: 0,basis: [],src: require("../static/A518-photo.jpg"),map: require("../static/background.png")}
-      let a519 = {id: 519,exhibit: "月への挑戦",url: "https://heroku-app-mobileguide.herokuapp.com/exhibits/45",point: 0,pmi: 0,basis: [],src: require("../static/A519-photo.jpg"),map: require("../static/background.png")}
-      let a520 = {id: 520,exhibit: "太陽系",url: "https://heroku-app-mobileguide.herokuapp.com/exhibits/46",point: 0,pmi: 0,basis: [],src: require("../static/A520-photo.jpg"),map: require("../static/background.png")}
-      let a521 = {id: 521,exhibit: "惑星の動きと引力",url: "https://heroku-app-mobileguide.herokuapp.com/exhibits/47",point: 0,pmi: 0,basis: [],src: require("../static/A521-photo.jpg"),map: require("../static/background.png")}
-      let a522 = {id: 522,exhibit: "惑星探査",url: "https://heroku-app-mobileguide.herokuapp.com/exhibits/48",point: 0,pmi: 0,basis: [],src: require("../static/A522-photo.jpg"),map: require("../static/background.png")}
-      let a523 = {id: 523,exhibit: "宇宙を測る・宇宙を探る",url: "https://heroku-app-mobileguide.herokuapp.com/exhibits/49",point: 0,pmi: 0,basis: [],src: require("../static/A523-photo.jpg"),map: require("../static/background.png")}
-      let a524 = {id: 524,exhibit: "星座を形づくる星々",url: "https://heroku-app-mobileguide.herokuapp.com/exhibits/50",point: 0,pmi: 0,basis: [],src: require("../static/A524-photo.jpg"),map: require("../static/background.png")}
-      let a525 = {id: 525,exhibit: "星の世界",url: "https://heroku-app-mobileguide.herokuapp.com/exhibits/51",point: 0,pmi: 0,basis: [],src: require("../static/A525-photo.jpg"),map: require("../static/background.png")}
-      let a526 = {id: 526,exhibit: "銀河の世界",url: "https://heroku-app-mobileguide.herokuapp.com/exhibits/52",point: 0,pmi: 0,basis: [],src: require("../static/A526-photo.jpg"),map: require("../static/background.png")}
-      let a527 = {id: 527,exhibit: "銀河系と天の川",url: "https://heroku-app-mobileguide.herokuapp.com/exhibits/53",point: 0,pmi: 0,basis: [],src: require("../static/A527-photo.jpg"),map: require("../static/background.png")}
-      let a528 = {id: 528,exhibit: "宇宙の果て",url: "https://heroku-app-mobileguide.herokuapp.com/exhibits/54",point: 0,pmi: 0,basis: [],src: require("../static/A528-photo.jpg"),map: require("../static/background.png")}
-      let exhibits_list = [a516,a517,a518,a519,a520,a521,a522,a523,a524,a525,a526,a527,a528]
+      let a518 = {id: 518,exhibit: "5. 月の満ち欠け",url: "https://heroku-app-mobileguide.herokuapp.com/exhibits/44",point: 0,pmi: 0,basis: [],src: require("../static/A518-photo.jpg"),map: require("../static/background.png")}
+      let a521 = {id: 521,exhibit: "7. 惑星の動きと引力",url: "https://heroku-app-mobileguide.herokuapp.com/exhibits/47",point: 0,pmi: 0,basis: [],src: require("../static/A521-photo.jpg"),map: require("../static/background.png")}
+      let a522 = {id: 522,exhibit: "6. 惑星探査",url: "https://heroku-app-mobileguide.herokuapp.com/exhibits/48",point: 0,pmi: 0,basis: [],src: require("../static/A522-photo.jpg"),map: require("../static/background.png")}
+      let a527 = {id: 527,exhibit: "14. 銀河系と天の川",url: "https://heroku-app-mobileguide.herokuapp.com/exhibits/53",point: 0,pmi: 0,basis: [],src: require("../static/A527-photo.jpg"),map: require("../static/background.png")}
+      let a529 = {id: 529,exhibit: "1. プラネタリウムの歴史",url: "https://heroku-app-mobileguide.herokuapp.com/exhibits/53",point: 0,pmi: 0,basis: [],src: require("../static/A529-photo.jpg"),map: require("../static/background.png")}
+      let a534 = {id: 534,exhibit: "16. デジタルタイムカプセル",url: "https://heroku-app-mobileguide.herokuapp.com/exhibits/53",point: 0,pmi: 0,basis: [],src: require("../static/A534-photo.jpg"),map: require("../static/background.png")}
+      let a501 = {id: 501,exhibit: "2. 古代人の宇宙",url: "https://heroku-app-mobileguide.herokuapp.com/exhibits/53",point: 0,pmi: 0,basis: [],src: require("../static/A501-photo.jpg"),map: require("../static/background.png")}
+      let a502 = {id: 502,exhibit: "4. 天動説から地動説へ",url: "https://heroku-app-mobileguide.herokuapp.com/exhibits/53",point: 0,pmi: 0,basis: [],src: require("../static/A527-photo.jpg"),map: require("../static/background.png")}
+      let a503 = {id: 503,exhibit: "3. 江戸時代の天文学",url: "https://heroku-app-mobileguide.herokuapp.com/exhibits/53",point: 0,pmi: 0,basis: [],src: require("../static/A503-photo.jpg"),map: require("../static/background.png")}
+      let a504 = {id: 504,exhibit: "9. 光学望遠鏡のしくみ",url: "https://heroku-app-mobileguide.herokuapp.com/exhibits/53",point: 0,pmi: 0,basis: [],src: require("../static/A504-photo.jpg"),map: require("../static/background.png")}
+      let a505 = {id: 505,exhibit: "8. 望遠鏡をのぞいてみよう",url: "https://heroku-app-mobileguide.herokuapp.com/exhibits/53",point: 0,pmi: 0,basis: [],src: require("../static/A505-photo.jpg"),map: require("../static/background.png")}
+      let a508 = {id: 508,exhibit: "10. さまざまな波長",url: "https://heroku-app-mobileguide.herokuapp.com/exhibits/53",point: 0,pmi: 0,basis: [],src: require("../static/A508-photo.jpg"),map: require("../static/background.png")}
+      let a509 = {id: 509,exhibit: "13. 分光観測とスペクトル",url: "https://heroku-app-mobileguide.herokuapp.com/exhibits/53",point: 0,pmi: 0,basis: [],src: require("../static/A509-photo.jpg"),map: require("../static/background.png")}
+      let a510 = {id: 510,exhibit: "12. 電波天文学",url: "https://heroku-app-mobileguide.herokuapp.com/exhibits/53",point: 0,pmi: 0,basis: [],src: require("../static/A510-photo.jpg"),map: require("../static/background.png")}
+      let a512 = {id: 512,exhibit: "15. X線天文学",url: "https://heroku-app-mobileguide.herokuapp.com/exhibits/53",point: 0,pmi: 0,basis: [],src: require("../static/A512-photo.jpg"),map: require("../static/background.png")}
+      let a513 = {id: 513,exhibit: "17. 市街光と星空",url: "https://heroku-app-mobileguide.herokuapp.com/exhibits/53",point: 0,pmi: 0,basis: [],src: require("../static/A513-photo.jpg"),map: require("../static/background.png")}
+      let a515 = {id: 515,exhibit: "11. 宇宙線をみる",url: "https://heroku-app-mobileguide.herokuapp.com/exhibits/53",point: 0,pmi: 0,basis: [],src: require("../static/A515-photo.jpg"),map: require("../static/background.png")}
+
+      let exhibits_list = [a518,a521,a522,a527,a529,a534,a501,a502,a503,a504,a505,a508,a509,a510,a512,a513,a515]
       let visitor_tags = this.visitor_tags
       let db = [];
 
@@ -495,7 +501,7 @@ export default {
   created() {
     //do something after creating vue instance
     // console.log('こんいgんkg')
-    this.json = require('../static/mysql.json')
+    this.json = require('../static/recommend_ver2.json')
     // this.q_num = 0;
   },
 

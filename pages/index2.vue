@@ -1,7 +1,7 @@
 <template>
   <v-responsive>
     <section>
-      <v-parallax src="tenjishitsu.jpg" height="600">
+      <v-parallax src="plane.jpg" height="450">
         <v-layout
           column
           align-center
@@ -9,8 +9,8 @@
           class="white--text"
         >
           <img src="logo.gif" alt="logo" height="60">
-          <h1 class="white--text mb-2 display-1 text-xs-center">Parallax Template</h1>
-          <div class="subheading mb-3 text-xs-center">Powered by Vuetify</div>
+          <h1 class="white--text mb-2 display-1 text-xs-center"><b>展示コンシェルジュ</b></h1>
+          <div class="subheading mb-3 text-xs-center"><b>興味に合わせて展示を巡ろう！</b></div>
           <v-btn
             class="mt-5"
             color="blue lighten-2"
@@ -18,7 +18,7 @@
             large
             href="/pre-made-themes"
           >
-            Get Started
+            推薦ページへ行く
           </v-btn>
         </v-layout>
       </v-parallax>
@@ -94,7 +94,7 @@
     </section>
 
     <section>
-      <v-parallax src="tenjishitsu.jpg" height="380">
+      <v-parallax src="plane.jpg" height="380">
         <v-layout column align-center justify-center>
           <div class="headline white--text mb-3 text-xs-center">Web development has never been easier</div>
           <em>Kick-start your application today</em>
@@ -187,6 +187,15 @@
 <script src="assets/style_index2.css"></script>
 
 <script>
+export default {
+  layout: 'nested',
+  methods: {
+    junbichu: function (event) {
+      // ここにオススメプログラムをつらつらと書いていく
+      alert('準備中です！')
+    }
+  }
+}
 </script>
 
 <style>

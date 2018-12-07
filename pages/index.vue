@@ -16,7 +16,7 @@
             color="blue lighten-2"
             dark
             large
-            href="/pre-made-themes"
+            href="/recommend_web"
           >
             推薦ページへ行く
           </v-btn>

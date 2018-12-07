@@ -1,4 +1,3 @@
-
 <template>
   <section>
     <!-- <div>
@@ -82,10 +81,6 @@
             </v-card-title>
 
             <v-card-actions class="actions">
-              <v-btn flat outline color="accent" @click="show[index] = !show[index]">
-                概要
-                <v-icon>{{ show[index] ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}</v-icon>
-              </v-btn>
               <v-btn
               flat
               outline
@@ -93,13 +88,17 @@
               :href="item.url"
               target="_blank"
               >解説を見る</v-btn>
-              <v-btn flat outline color="primary">アクセス</v-btn>
+              <v-btn flat outline color="accent" @click="show[index] = !show[index]">
+                アクセス
+                <v-icon>{{ show[index] ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}</v-icon>
+              </v-btn>
             </v-card-actions>
 
             <v-slide-y-transition>
-              <v-card-text class="more" v-show="show[index]">
-                {{item.overview}}
-              </v-card-text>
+              <v-img class="more" v-show="show[index]"
+                :src="item.map"
+                width="350px">
+              </v-img>
             </v-slide-y-transition>
           </v-card>
           <v-spacer><br></v-spacer>
@@ -190,7 +189,6 @@ export default {
         {tag:'オルゴール',tag_id: 19},
         {tag:'カールツァイス',tag_id: 20},
         {tag:'旧名古屋市科学館',tag_id: 21},
-        {tag:'歴史',tag_id: 22},
         {tag:'思い出',tag_id: 23},
         {tag:'タイムカプセル',tag_id: 24},
         {tag:'天動説',tag_id: 25},
@@ -202,8 +200,6 @@ export default {
         {tag:'占星術',tag_id: 31},
         {tag:'遺跡',tag_id: 32},
         {tag:'江戸',tag_id: 33},
-        {tag:'歴史',tag_id: 34},
-        {tag:'地動説',tag_id: 35},
         {tag:'和製',tag_id: 36},
         {tag:'レンズ',tag_id: 37},
         {tag:'屈折',tag_id: 38},
@@ -211,7 +207,6 @@ export default {
         {tag:'望遠鏡',tag_id: 40},
         {tag:'倍率',tag_id: 41},
         {tag:'視野',tag_id: 42},
-        {tag:'望遠鏡',tag_id: 43},
         {tag:'口径',tag_id: 44},
         {tag:'X線',tag_id: 45},
         {tag:'紫外線',tag_id: 46},
@@ -221,11 +216,9 @@ export default {
         {tag:'プリズム',tag_id: 50},
         {tag:'波長',tag_id: 51},
         {tag:'回折格子',tag_id: 52},
-        {tag:'電波',tag_id: 53},
         {tag:'パラボラアンテナ',tag_id: 54},
         {tag:'宇宙背景放射',tag_id: 55},
         {tag:'無線',tag_id: 56},
-        {tag:'X線',tag_id: 57},
         {tag:'超高温',tag_id: 58},
         {tag:'高エネルギー',tag_id: 59},
         {tag:'レントゲン',tag_id: 60},
@@ -501,7 +494,7 @@ export default {
   created() {
     //do something after creating vue instance
     // console.log('こんいgんkg')
-    this.json = require('../static/recommend_ver2.json')
+    this.json = require('../static/WebPMI.json')
     // this.q_num = 0;
   },
 

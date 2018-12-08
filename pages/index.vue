@@ -117,7 +117,7 @@
             color="blue lighten-2"
             dark
             large
-            href="/pre-made-themes"
+            href="/recommend_web"
           >
             Get Started
           </v-btn>

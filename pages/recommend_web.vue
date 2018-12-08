@@ -250,7 +250,7 @@ export default {
       let a529 = {id: 529,exhibit: "1. プラネタリウムの歴史",url: "https://heroku-app-mobileguide.herokuapp.com/exhibits/74",point: 0,pmi: 0,basis: [],src: require("../static/A529-photo.jpg"),map: require("../static/map1.jpg")}
       let a534 = {id: 534,exhibit: "16. デジタルタイムカプセル",url: "https://heroku-app-mobileguide.herokuapp.com/exhibits/67",point: 0,pmi: 0,basis: [],src: require("../static/A534-photo.jpg"),map: require("../static/map16.jpg")}
       let a501 = {id: 501,exhibit: "2. 古代人の宇宙",url: "https://heroku-app-mobileguide.herokuapp.com/exhibits/56",point: 0,pmi: 0,basis: [],src: require("../static/A501-photo.jpg"),map: require("../static/map2.jpg")}
-      let a502 = {id: 502,exhibit: "4. 天動説から地動説へ",url: "https://heroku-app-mobileguide.herokuapp.com/exhibits/69",point: 0,pmi: 0,basis: [],src: require("../static/A527-photo.jpg"),map: require("../static/map4.jpg")}
+      let a502 = {id: 502,exhibit: "4. 天動説から地動説へ",url: "https://heroku-app-mobileguide.herokuapp.com/exhibits/69",point: 0,pmi: 0,basis: [],src: require("../static/A502-photo.jpg"),map: require("../static/map4.jpg")}
       let a503 = {id: 503,exhibit: "3. 江戸時代の天文学",url: "https://heroku-app-mobileguide.herokuapp.com/exhibits/62",point: 0,pmi: 0,basis: [],src: require("../static/A503-photo.jpg"),map: require("../static/map3.jpg")}
       let a504 = {id: 504,exhibit: "9. 光学望遠鏡のしくみ",url: "https://heroku-app-mobileguide.herokuapp.com/exhibits/75",point: 0,pmi: 0,basis: [],src: require("../static/A504-photo.jpg"),map: require("../static/map9.jpg")}
       let a505 = {id: 505,exhibit: "8. 望遠鏡をのぞいてみよう",url: "https://heroku-app-mobileguide.herokuapp.com/exhibits/59",point: 0,pmi: 0,basis: [],src: require("../static/A505-photo.jpg"),map: require("../static/map8.jpg")}

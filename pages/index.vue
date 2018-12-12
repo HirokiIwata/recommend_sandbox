@@ -57,48 +57,45 @@
                   提示される言葉の中から<br>気になるものを選ぶことで<br>あなたの興味に合わせた<br>展示物をオススメします！
                 </v-card-text>
               </v-card>
-              <v-flex xs12 md4>
-                <v-card flat class="transparent">
-                  <v-card-text class="text-xs-center">
-                    <a
-                    href="https://heroku-app-mobileguide.herokuapp.com/exhibits/index"
-                    target="_blank">
-                    <v-icon x-large class="blue--text text--lighten-2">color_lens</v-icon>
-                    </a>
-                  </v-card-text>
-                  <v-card-title primary-title class="layout justify-center">
-                    <div class="headline text-xs-center"><a
-                    href="https://heroku-app-mobileguide.herokuapp.com/exhibits/index"
-                    target="_blank">展示物一覧</a></div>
-                  </v-card-title>
-                  <v-card-text>
-                    天文に関する展示物の解説を<br>デジタル形式で閲覧できます．<br>
-                    展示室には書かれていない<br>ここだけの情報も・・・！
-                  </v-card-text>
-                </v-card>
-              </v-flex>
-              <v-flex xs12 md4>
-                <v-card flat class="transparent">
-                  <v-card-text class="text-xs-center">
-                    <a
-                    href="http://www.ncsm.city.nagoya.jp/study/astro/index.html"
-                    target="_blank">
-                      <v-icon x-large class="blue--text text--lighten-2">flash_on</v-icon>
-                    </a>
-                  </v-card-text>
-                  <v-card-title primary-title class="layout justify-center">
-                    <a
-                    href="http://www.ncsm.city.nagoya.jp/study/astro/index.html"
-                    target="_blank">
-                      <div class="headline">天文情報 | 天文データ</div>
-                    </a>
-                  </v-card-title>
-                  <v-card-text>
-                    名古屋市科学館が公開している<br>天文情報にアクセスできます．<br>
-                    スーパーカミオカンデの内部映像など<br>貴重な映像が盛りだくさん！
-                  </v-card-text>
-                </v-card>
-              </v-flex>
+              <v-card flat class="transparent">
+                <v-card-text class="text-xs-center">
+                  <a
+                  href="https://heroku-app-mobileguide.herokuapp.com/exhibits/index"
+                  target="_blank">
+                  <v-icon x-large class="blue--text text--lighten-2">color_lens</v-icon>
+                  </a>
+                </v-card-text>
+                <v-card-title primary-title class="layout justify-center">
+                  <div class="headline text-xs-center"><a
+                  href="https://heroku-app-mobileguide.herokuapp.com/exhibits/index"
+                  target="_blank">展示物一覧</a></div>
+                </v-card-title>
+                <v-card-text>
+                  天文に関する展示物の解説を<br>デジタル形式で閲覧できます．<br>
+                  展示室には書かれていない<br>ここだけの情報も・・・！
+                </v-card-text>
+              </v-card>
+              <v-card flat class="transparent">
+                <v-card-text class="text-xs-center">
+                  <a
+                  href="http://www.ncsm.city.nagoya.jp/study/astro/index.html"
+                  target="_blank">
+                    <v-icon x-large class="blue--text text--lighten-2">flash_on</v-icon>
+                  </a>
+                </v-card-text>
+                <v-card-title primary-title class="layout justify-center">
+                  <a
+                  href="http://www.ncsm.city.nagoya.jp/study/astro/index.html"
+                  target="_blank">
+                    <div class="headline">天文情報 | 天文データ</div>
+                  </a>
+                </v-card-title>
+                <v-card-text>
+                  名古屋市科学館が公開している<br>天文情報にアクセスできます．<br>
+                  スーパーカミオカンデの内部映像など<br>貴重な映像が盛りだくさん！
+                </v-card-text>
+              </v-card>
+
               <v-flex xs12 md4>
               </v-flex>
             </v-layout>

@@ -90,7 +90,7 @@
               target="_blank"
               >解説を見る</v-btn>
               <v-btn flat outline color="accent" @click="show[index] = !show[index]">
-                アクセス
+                概要
                 <v-icon>{{ show[index] ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}</v-icon>
               </v-btn>
             </v-card-actions>
